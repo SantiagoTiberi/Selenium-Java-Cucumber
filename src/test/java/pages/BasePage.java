@@ -8,7 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.eo.Se;
 
 public class BasePage { //en este caso se usara para tener abierta una ventana de chrome usando el webdriver descargado de chrome
     
@@ -45,5 +48,18 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
         Find(locator).sendKeys(textToWrite);
     }
 
-    
+    public void selectFromDropdownByValue(String locator, String valueToSelect){
+        Select dropdown = new Select(Find(locator));
+        dropdown.selectByValue(valueToSelect);
+    }
+
+    public void selectFromDropdownByIndex(String locator, int valueToSelect){
+        Select dropdown = new Select(Find(locator));
+        dropdown.selectByIndex(valueToSelect);
+    }
+
+    public void selectFromDropdownByText(String locator, String valueToSelect){
+        Select dropdown = new Select(Find(locator));
+        dropdown.selectByVisibleText(valueToSelect);
+    }
 }

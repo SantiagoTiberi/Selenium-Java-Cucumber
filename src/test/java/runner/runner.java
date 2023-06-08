@@ -10,6 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = "steps"
+ //   tags = "@test" //es para testear los dropdown en sandbox
 )
 
 public class runner {
