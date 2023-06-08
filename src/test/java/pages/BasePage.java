@@ -2,9 +2,12 @@
 package pages;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage { //en este caso se usara para tener abierta una ventana de chrome usando el webdriver descargado de chrome
@@ -27,4 +30,20 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
     public static void navigateTo(String url){ //funcion de navegar
         driver.get(url);
     }
+
+    private WebElement Find(String locator){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator))); //espera hasta ...
+
+    }
+
+    public void clickElement(String locator){ //dado un xpath, lo localiza y hace click sobre ese elemnto en caso de localizarlo
+        Find(locator).click();
+    }
+
+    public void write(String locator, String textToWrite){
+        Find(locator).clear();
+        Find(locator).sendKeys(textToWrite);
+    }
+
+    
 }

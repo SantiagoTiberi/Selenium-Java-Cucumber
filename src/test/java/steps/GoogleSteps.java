@@ -14,18 +14,18 @@ public class GoogleSteps {
 
     @Given("^I am on the Google search page$") //le agredo ^ al principio y $ al final del step para definir  que cucumber lea entre esos dos simbolos
     public void navigateToGoogle(){
-    google.navigateToGoogle();
-
+        google.navigateToGoogle();
+    
     }
 
     @When("^I enter a search criteria$") //le agredo ^ al principio y $ al final del step para definir  que cucumber lea entre esos dos simbolos
     public void enterSearchCriteria(){
-
+        google.enterSearchCriteria("Google");
     }
 
     @And("^click on the search button$") //le agredo ^ al principio y $ al final del step para definir  que cucumber lea entre esos dos simbolos
     public void clickSearchButton(){
-
+        google.clickGoogleSearch();
     }
 
     @Then("^the results match the criteria$") //le agredo ^ al principio y $ al final del step para definir  que cucumber lea entre esos dos simbolos
