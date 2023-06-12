@@ -18,7 +18,7 @@ public class GridPage extends BasePage {
        return getValueFromTable(cell, row, column);
     }
 
-    public boolean cellStatus(){
+    public boolean cellStatus(){ //verifica que la tabla se encuentre
         return elementIsDisplayed(mainTable);
     }
 

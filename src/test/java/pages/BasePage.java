@@ -112,14 +112,16 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
         return Find(locator).isEnabled();
     }
 
-    public boolean elementIsDisplayed(String locator){
+    public boolean elementIsDisplayed(String locator){ // es tipo buleano (devuelde verd o falso) 
         
-        return Find(locator).isDisplayed();
+        return Find(locator).isDisplayed();  //devuelve si esta o no obserbandose el elemento
     }
 
     public boolean elementIsSelected(String locator){
 
-        return Find(locator).isSelected();
+        return Find(locator).isSelected(); //devuelve si esta o no seleccionado un elemento
     }
+
+
 
 }

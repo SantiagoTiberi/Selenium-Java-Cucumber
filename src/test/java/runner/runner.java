@@ -9,8 +9,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = "src/test/resources/features",
-    glue = "steps"
-   // tags = "@test" //es para testear los dropdown en sandbox
+    publish = true,
+    glue = "steps",
+    tags = "@Grid" //es para testear los dropdown en sandbox
 )
 
 public class runner {
