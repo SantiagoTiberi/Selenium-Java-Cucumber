@@ -4,6 +4,7 @@ public class GooglePage extends BasePage{ //hereda las caracteristicas de BasePa
     
     private String searchButton = "//input[@value='Buscar con Google']";
     private String searchTextField = "//textarea[@id='APjFqb']";
+    private String firstResult = "";
 
     public GooglePage(){ //al heredar se debe llamar al sconstructor que es esto
         super(driver);
@@ -21,4 +22,10 @@ public class GooglePage extends BasePage{ //hereda las caracteristicas de BasePa
     public void enterSearchCriteria(String criteria){
         write(searchTextField, criteria);
     }
+
+    public String firstResult(){
+        return textFromElement(firstResult);
+    }
+
+
 }

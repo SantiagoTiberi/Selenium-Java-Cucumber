@@ -2,7 +2,7 @@
 package pages;
 
 
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.cucumber.java.eo.Se;
+//import io.cucumber.java.eo.Se;
 
 public class BasePage { //en este caso se usara para tener abierta una ventana de chrome usando el webdriver descargado de chrome
     
@@ -103,5 +103,23 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
         driver.switchTo().alert().dismiss();
     }
 
+    public String textFromElement (String locator){
+        return Find(locator).getText();
+
+    }
+
+        public boolean elementEnabled(String locator){
+        return Find(locator).isEnabled();
+    }
+
+    public boolean elementIsDisplayed(String locator){
+        
+        return Find(locator).isDisplayed();
+    }
+
+    public boolean elementIsSelected(String locator){
+
+        return Find(locator).isSelected();
+    }
 
 }

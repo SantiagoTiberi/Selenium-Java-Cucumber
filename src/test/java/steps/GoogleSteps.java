@@ -1,5 +1,7 @@
 package steps;
 
+import org.junit.Assert;
+
 import io.cucumber.java.en.*; //asi puede traer todas las libresias de cucumber juntas
 //import io.cucumber.java.en.And;
 //import io.cucumber.java.en.Given;
@@ -30,6 +32,7 @@ public class GoogleSteps {
 
     @Then("^the results match the criteria$") //le agredo ^ al principio y $ al final del step para definir  que cucumber lea entre esos dos simbolos
     public void validateResults(){
+        Assert.assertEquals("texto que quiero corroborar", google.firstResult());
 
     }
 }
