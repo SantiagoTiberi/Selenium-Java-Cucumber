@@ -2,9 +2,12 @@
 package pages;
 
 
+import java.util.List;
+
 //import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,6 +41,10 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
 
     public static void navigateTo(String url){ //funcion de navegar
         driver.get(url);
+    }
+
+    public static void closeBrowser(){
+        driver.quit();
     }
 
     private WebElement Find(String locator){
@@ -100,7 +107,12 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
     }
 
     public void dismissAlert(){
-        driver.switchTo().alert().dismiss();
+        try{ //con esto se intenta hacer lo que este dentro de las llaves
+            driver.switchTo().alert().dismiss();
+        }catch (NoAlertPresentException e){ //esto sirve para que en caso de error nos diga que fue que paso y porque se dio el error
+            e.printStackTrace();
+        }
+        
     }
 
     public String textFromElement (String locator){
@@ -122,6 +134,8 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
         return Find(locator).isSelected(); //devuelve si esta o no seleccionado un elemento
     }
 
-
+    public List<WebElement> bringMeAllElements(String locator){ //trae todos los elementos de una lista(WebElements en este caso)
+        return driver.findElements(By.className(locator));
+    }
 
 }
