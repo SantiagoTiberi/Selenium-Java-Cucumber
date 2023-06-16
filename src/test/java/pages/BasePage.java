@@ -43,6 +43,10 @@ public class BasePage { //en este caso se usara para tener abierta una ventana d
         driver.get(url);
     }
 
+    public void goToLinkText(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
+    }
+
     public static void closeBrowser(){
         driver.quit();
     }

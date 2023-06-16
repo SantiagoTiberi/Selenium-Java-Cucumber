@@ -15,7 +15,7 @@ import pages.BasePage;
     monochrome = true,
     glue = "steps",
     plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","json:target/cucumber-reports.json"},
-    tags = "@Grid" //es para testear los dropdown en sandbox
+    tags = "@Amazon" //es para testear los dropdown en sandbox
 )
 
 public class runner {
